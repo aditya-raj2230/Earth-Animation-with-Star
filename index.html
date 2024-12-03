@@ -72,6 +72,8 @@
       // Zoom functionality
       window.addEventListener("wheel", (event) => {
         camera.position.z += event.deltaY * 0.01; // Adjust zoom speed
+        // Limit zoom to prevent going below the water surface
+        camera.position.z = Math.max(camera.position.z, 2); // Set minimum zoom level
       });
 
       // Variables to track mouse movement
